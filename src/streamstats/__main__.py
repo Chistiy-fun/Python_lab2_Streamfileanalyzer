@@ -3,7 +3,7 @@ import sys
 
 from streamstats.analysis import Stats
 from streamstats.parsers import parse_jsonl, parse_csv
-from streamstats.report import build_report, write_json_report
+from streamstats.report import build_report, write_json_report, write_csv_report
 from streamstats.errors import StreamStatsError
 from streamstats.registry import PARSERS, get_parser, register_parser
 
@@ -24,6 +24,7 @@ def main():
     analyze_parser.add_argument("--output", default=None, help="Path to the output JSONL file")
     analyze_parser.add_argument("--skip-invalid", action="store_true", help="Skip invalid events")
     analyze_parser.add_argument("--format", choices=tuple(PARSERS), default="jsonl", help="Input file format (default: jsonl)")
+    analyze_parser.add_argument("--report-format", choices=["json", "csv"], default="json", help="Output report format (default: json)")
 
     args = parser.parse_args()
 
@@ -37,10 +38,15 @@ def main():
 
     report = build_report(stats)
 
-    if args.output is not None:
-        write_json_report(report, args.output)
-    else:
-        write_json_report(report, "report.json")
+    match args.report_format:
+        case "json":
+            output_path = args.output if args.output is not None else "report.json"
+            write_json_report(report, output_path)
+        case "csv":
+            output_path = args.output if args.output is not None else "report.csv"
+            write_csv_report(report, output_path)
+        case _:
+            raise StreamStatsError(f"Unsupported report format: {args.report_format}")
 
 
 
