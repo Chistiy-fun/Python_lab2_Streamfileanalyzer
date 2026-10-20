@@ -9,3 +9,7 @@ class InvalidEventError(StreamStatsError):
 
 class InvalidTimestampError(InvalidEventError):
     pass
+
+
+class UnsupportedFileFormatError(StreamStatsError):
+    pass

@@ -5,6 +5,12 @@ from streamstats.analysis import Stats
 from streamstats.parsers import parse_jsonl, parse_csv
 from streamstats.report import build_report, write_json_report
 from streamstats.errors import StreamStatsError
+from streamstats.registry import PARSERS, get_parser, register_parser
+
+
+register_parser("jsonl", parse_jsonl)
+register_parser("csv", parse_csv)
+
 
 def main():
     parser = argparse.ArgumentParser(prog="streamstats")
@@ -17,15 +23,11 @@ def main():
     analyze_parser.add_argument("input", nargs="+", help="Path to the input JSONL file")
     analyze_parser.add_argument("--output", default=None, help="Path to the output JSONL file")
     analyze_parser.add_argument("--skip-invalid", action="store_true", help="Skip invalid events")
-    analyze_parser.add_argument("--format", choices=["jsonl", "csv"], default="jsonl", help="Input file format (default: jsonl)")
+    analyze_parser.add_argument("--format", choices=tuple(PARSERS), default="jsonl", help="Input file format (default: jsonl)")
 
     args = parser.parse_args()
 
-    match args.format:
-        case "jsonl":
-            parse_file = parse_jsonl
-        case "csv":
-            parse_file = parse_csv
+    parse_file = get_parser(args.format)
 
     stats = Stats()
 
