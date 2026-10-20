@@ -1,0 +1,21 @@
+timestamp,level,source,message
+2026-10-20T11:00:00+03:00,INFO,frontend,Page loaded
+2026-10-20T11:01:00+03:00,DEBUG,frontend,Assets cached
+2026-10-20T11:02:00+03:00,WARNING,gateway,Slow upstream response
+2026-10-20T11:03:00+03:00,ERROR,gateway,Upstream request failed
+2026-10-20T11:04:00+03:00,CRITICAL,cluster,Node became unavailable
+2026-10-20T11:05:00+03:00,INFO,queue,Message published
+2026-10-20T11:06:00+03:00,DEBUG,queue,Message acknowledged
+2026-10-20T11:07:00+03:00,WARNING,queue,Consumer lag increased
+2026-10-20T11:08:00+03:00,ERROR,queue,Message processing failed
+2026-10-20T11:09:00+03:00,INFO,search,Index request started
+2026-10-20T11:10:00+03:00,DEBUG,search,Search filters applied
+2026-10-20T11:11:00+03:00,WARNING,search,Index is stale
+2026-10-20T11:12:00+03:00,ERROR,search,Search backend timeout
+2026-10-20T11:13:00+03:00,INFO,storage,Backup started
+2026-10-20T11:14:00+03:00,CRITICAL,storage,Backup destination unavailable
+2026-10-20T11:15:00+03:00,DEBUG,storage,Backup checksum calculated
+2026-10-20T11:16:00+03:00,INFO,reporting,Report generated
+2026-10-20T11:17:00+03:00,WARNING,reporting,Report delivery delayed
+2026-10-20T11:18:00+03:00,ERROR,reporting,Report delivery failed
+2026-10-20T11:19:00+03:00,INFO,frontend,Session completed

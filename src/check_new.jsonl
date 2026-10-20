@@ -1,0 +1,5 @@
+{"timestamp":"2026-10-20T16:00:00+03:00","level":"INFO","source":"api","message":"New request received"}
+{"timestamp":"2026-10-20T16:01:15+03:00","level":"DEBUG","source":"auth","message":"Credentials validated"}
+{"timestamp":"2026-10-20T16:02:30+03:00","level":"WARNING","source":"cache","message":"Cache entry expired"}
+{"timestamp":"2026-10-20T16:03:45+03:00","level":"ERROR","source":"database","message":"Query execution failed"}
+{"timestamp":"2026-10-20T16:05:00+03:00","level":"CRITICAL","source":"monitor","message":"Service is unavailable"}

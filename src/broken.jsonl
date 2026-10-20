@@ -1,0 +1,5 @@
+{"timestamp":"2026-10-20T09:00:00+03:00","level":"INFO","source":"api","message":"Request received"}
+{"timestamp":"2026-10-20T09:01:00+03:00","level":"ERROR","source":"database","message":"Connection failed"
+{"timestamp":"2026-10-20T09:02:00+03:00","level":"NOTICE","source":"worker","message":"Unknown level"}
+{"timestamp":"not-a-timestamp","level":"WARNING","source":"worker","message":"Invalid timestamp"}
+{"timestamp":"2026-10-20T09:04:00+03:00","level":"DEBUG","source":"","message":"Empty source"}

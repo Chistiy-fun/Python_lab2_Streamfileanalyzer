@@ -1,0 +1,21 @@
+timestamp,level,source,message
+2026-10-20T10:00:00+03:00,INFO,api,Request received
+2026-10-20T10:01:00+03:00,DEBUG,auth,Credentials checked
+2026-10-20T10:02:00+03:00,WARNING,cache,Cache entry expired
+2026-10-20T10:03:00+03:00,ERROR,database,Connection failed
+2026-10-20T10:04:00+03:00,CRITICAL,monitor,Service unavailable
+2026-10-20T10:05:00+03:00,INFO,api,Response sent
+2026-10-20T10:06:00+03:00,DEBUG,worker,Task started
+2026-10-20T10:07:00+03:00,WARNING,worker,Queue is almost full
+2026-10-20T10:08:00+03:00,ERROR,api,Invalid request
+2026-10-20T10:09:00+03:00,INFO,auth,User authenticated
+2026-10-20T10:10:00+03:00,DEBUG,cache,Cache lookup completed
+2026-10-20T10:11:00+03:00,WARNING,storage,Disk usage is high
+2026-10-20T10:12:00+03:00,ERROR,storage,Write operation failed
+2026-10-20T10:13:00+03:00,INFO,worker,Task completed
+2026-10-20T10:14:00+03:00,CRITICAL,database,Database unavailable
+2026-10-20T10:15:00+03:00,DEBUG,тестовый-сервис,Обработка завершена
+2026-10-20T10:16:00+03:00,INFO,notifications,Notification delivered
+2026-10-20T10:17:00+03:00,WARNING,api,Rate limit nearly reached
+2026-10-20T10:18:00+03:00,ERROR,payments,Payment provider timeout
+2026-10-20T10:19:00+03:00,INFO,api,Request completed
