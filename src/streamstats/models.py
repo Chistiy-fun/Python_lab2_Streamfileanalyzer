@@ -1,3 +1,5 @@
+"""Содержит модель события и функции проверки входных данных."""
+
 from dataclasses import dataclass
 from datetime import datetime, timezone
 
@@ -14,6 +16,7 @@ class Event:
 
 
 def validate_event(raw: dict[str, object]) -> Event:
+    """Вход: словарь с данными события. Выход: проверенный объект Event."""
     required_fields = ("timestamp", "level", "source", "message")
     levels = ("DEBUG", "INFO", "WARNING", "ERROR", "CRITICAL")
 
@@ -44,6 +47,7 @@ def validate_event(raw: dict[str, object]) -> Event:
 
 
 def parse_timestamp(value: str) -> datetime:
+    """Вход: timestamp в ISO-формате. Выход: datetime в часовом поясе UTC."""
     try:
         timestamp = datetime.fromisoformat(value)
     except ValueError as error:

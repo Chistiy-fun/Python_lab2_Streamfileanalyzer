@@ -1,8 +1,11 @@
+"""Формирует итоговый отчёт и сохраняет его в форматах JSON или CSV."""
+
 from streamstats.analysis import Stats
 import json
 import csv
 
 def build_report(stats: Stats) -> dict:
+    """Вход: объект Stats со статистикой событий. Выход: словарь отчёта."""
     return {
         "total_records": stats.total_events + stats.skipped_invalid,
         "total_events": stats.total_events,
@@ -17,11 +20,13 @@ def build_report(stats: Stats) -> dict:
 
 
 def write_json_report(report: dict, path: str) -> None:
+    """Вход: словарь отчёта и путь к файлу. Выход: JSON-файл; возвращает None."""
     with open(path, "w", encoding="utf-8") as f:
         json.dump(report, f, ensure_ascii=False, indent=2)
 
 
 def write_csv_report(report: dict, path: str) -> None:
+    """Вход: словарь отчёта и путь к файлу. Выход: CSV-файл; возвращает None."""
     with open(path, "w", newline="", encoding="utf-8") as f:
         writer = csv.writer(f)
         writer.writerow(["section", "key", "value"])

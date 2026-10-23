@@ -1,4 +1,4 @@
-{"timestamp":"2026-10-20T09:00:00+03:00","level":"INFO","source":43,"message":"Request received"}
+{"timestamp":"2026-10-20T09:00:00+03:00","level":"INFO","source":"api","message":"Request received"}
 {"timestamp":"2026-10-20T09:01:00+03:00","level":"DEBUG","source":"scheduler","message":"Job started"}
 {"timestamp":"2026-10-20T09:02:00+03:00","level":"WARNING","source":"worker","message":"Queue is almost full"}
 {"timestamp":"2026-10-20T09:03:00+03:00","level":"ERROR","source":"database","message":"Connection failed"}

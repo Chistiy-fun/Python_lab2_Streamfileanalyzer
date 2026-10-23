@@ -1,3 +1,5 @@
+"""Читает события из JSONL и CSV и преобразует их в объекты Event."""
+
 import csv
 import json
 import logging
@@ -9,6 +11,7 @@ logger = logging.getLogger(__name__)
 
 
 def parse_jsonl(path, skip_invalid=False, *, on_invalid=None):
+    """Вход: путь к JSONL, флаг пропуска ошибок и callback. Выход: события Event."""
     with open(path, encoding="utf-8") as f:
         for line_num, line in enumerate(f, start=1):
             try:
@@ -30,6 +33,7 @@ def parse_jsonl(path, skip_invalid=False, *, on_invalid=None):
 
 
 def parse_csv(path, skip_invalid=False, *, on_invalid=None):
+    """Вход: путь к CSV, флаг пропуска ошибок и callback. Выход: события Event."""
     with open(path, encoding="utf-8") as f:
         reader = csv.DictReader(f)
 

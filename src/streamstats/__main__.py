@@ -1,3 +1,5 @@
+"""Запускает CLI-команду анализа входных файлов и создания отчёта."""
+
 import argparse
 import sys
 
@@ -13,6 +15,7 @@ register_parser("csv", parse_csv)
 
 
 def main():
+    """Вход: аргументы командной строки. Выход: сохранённый отчёт; возвращает None."""
     parser = argparse.ArgumentParser(prog="streamstats")
     subparsers = parser.add_subparsers(dest="command", required=True)
     analyze_parser = subparsers.add_parser(
