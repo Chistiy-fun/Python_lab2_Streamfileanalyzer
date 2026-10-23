@@ -11,3 +11,10 @@ dependencies = [
 [tool.mypy]
 mypy_path = "$MYPY_CONFIG_FILE_DIR/src"
 explicit_package_bases = true
+
+[[tool.mypy.overrides]]
+module = [
+    "pytest",
+    "tests.*",
+]
+ignore_missing_imports = true
